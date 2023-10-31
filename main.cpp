@@ -38,7 +38,7 @@ int main(int, char**){
     std::cout << "Type a name: ";
     std::cin >> key;
 
-    while(key != "get" || key != "post"){
+    while(key != "get" && key != "post"){
         std::cout << "Type a value: ";
         std::cin >> value;
         args.emplace_back(cpr::Pair(key,value));
