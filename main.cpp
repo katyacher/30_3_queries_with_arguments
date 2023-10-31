@@ -16,8 +16,8 @@ void request(const std::string query, const std::vector<cpr::Pair> &args){
 
         cpr::Url url = cpr::Url{"http://www.httpbin.org/" + query + parameters};
         cpr::Response r = cpr::Get(url);
-
         std::cout << r.text << std::endl;
+        
     } else if(query == "post"){
         cpr::Url url = cpr::Url{"http://www.httpbin.org/" + query};
         cpr::Response r = cpr::Post(url, cpr::Payload(args.begin(), args.end()));
@@ -29,9 +29,7 @@ void request(const std::string query, const std::vector<cpr::Pair> &args){
 int main(int, char**){
     std::cout << "Hello, from 30_3_queries_with_arguments!\n";
 
-    
-    std::string key, value;
-    
+    std::string key, value;    
     std::vector<cpr::Pair> args;
     
     std::cout << "Enter some names of arguments and its value and type of request(get/post)." << std::endl;
